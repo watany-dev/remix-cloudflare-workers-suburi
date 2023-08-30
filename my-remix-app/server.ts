@@ -18,6 +18,7 @@ app.use(
 )
 app.use('*', secureHeaders())
 
-app.mount('/', remixHandler)
+app.mount('/remix/', remixHandler)
+
 
 export default app

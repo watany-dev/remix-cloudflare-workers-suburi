@@ -6,7 +6,7 @@ main = "./build/index.js"
 compatibility_date = "2023-04-20"
 
 [site]
-  bucket = "./public"
+bucket = "./public"
 
 [build]
   command = "npm run build"

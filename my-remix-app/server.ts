@@ -1,8 +1,8 @@
 import { Hono } from 'hono'
-import { env } from 'hono/adapter'
+// import { env } from 'hono/adapter'
 import { basicAuth } from 'hono/basic-auth'
 import { secureHeaders } from 'hono/secure-headers'
-import type { AppLoadContext } from '@remix-run/cloudflare'
+// import type { AppLoadContext } from '@remix-run/cloudflare'
 // import { serveStatic } from 'hono/cloudflare-workers'
 import { createRequestHandler } from '@remix-run/cloudflare'
 import * as build from './build'
@@ -33,8 +33,9 @@ app.use('*', secureHeaders())
 // })
 
 app.get('*', async (c) => {
-  const loadContext: AppLoadContext = { env: env(c) }
-  return await handleRemixRequest(c.req.raw, loadContext)
+  return await handleRemixRequest(c.req.raw)
+  // const loadContext: AppLoadContext = { env: env(c) }
+  // return await handleRemixRequest(c.req.raw, loadContext)
 })
 
 export default app
